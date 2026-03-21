@@ -15,7 +15,6 @@ const Navbar = () => {
     { label: t.nav.services, href: '#services' },
     { label: t.nav.contact, href: '#contact' },
     { label: t.nav.pricing, href: '#pricing' },
-    { label: t.nav.blog, href: '#blog' },
   ];
 
   return (
