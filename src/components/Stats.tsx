@@ -122,7 +122,7 @@ const Stats = () => {
           <div className="stats-grid-line right-[7.5%]" />
         </div>
 
-        <div className="relative z-[2] mx-auto max-w-[1280px] px-6 py-10 md:px-10 md:py-14 lg:px-0 lg:py-16">
+        <div className="relative z-[2] mx-auto max-w-[1280px] px-[4%] py-10 md:px-10 md:py-14 lg:px-0 lg:py-16">
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:gap-5">
             {stats.map((s, i) => (
               <div

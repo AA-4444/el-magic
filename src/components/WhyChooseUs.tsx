@@ -176,7 +176,7 @@ const WhyChooseUs = () => {
           <div className="why-grid-line right-[7.5%]" />
         </div>
 
-        <div className="relative z-[2] mx-auto max-w-[1280px] px-6 py-20 md:px-10 lg:px-0 lg:py-24">
+        <div className="relative z-[2] mx-auto max-w-[1280px] px-[4%] py-20 md:px-10 lg:px-0 lg:py-24">
           <div className="mb-16 md:mb-20">
             <div className="flex items-center gap-6">
               <div className="h-[74px] w-[2px] bg-[#ff5a1f]" />

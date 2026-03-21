@@ -309,7 +309,7 @@ const Pricing = () => {
           <div className="pricing-grid-line right-[7.5%]" />
         </div>
 
-        <div className="relative z-[2] mx-auto max-w-[1280px] px-6 md:px-10 lg:px-0">
+        <div className="relative z-[2] mx-auto max-w-[1280px] px-[4%] md:px-10 lg:px-0">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="animate-on-scroll lg:sticky lg:top-32 lg:self-start">
               <div className="mb-6 flex items-start gap-6">

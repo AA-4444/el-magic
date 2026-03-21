@@ -220,8 +220,8 @@ const Testimonials = () => {
 
         @media (max-width: 768px) {
           .testimonial-card {
-            min-width: calc(100vw - 48px);
-            max-width: calc(100vw - 48px);
+            min-width: 100%;
+            max-width: 100%;
             min-height: 320px;
             padding: 24px 18px 22px;
           }
@@ -264,7 +264,7 @@ const Testimonials = () => {
           <div className="testimonials-grid-line right-[7.5%]" />
         </div>
 
-        <div className="relative z-[2] mx-auto max-w-[1280px] px-6 md:px-10 lg:px-0">
+        <div className="relative z-[2] mx-auto max-w-[1280px] px-[4%] md:px-10 lg:px-0">
           <div className="mb-12 animate-on-scroll md:mb-14">
             <div className="mb-5 flex items-start gap-6">
               <div className="mt-2 h-[72px] w-[2px] bg-primary" />
@@ -280,7 +280,7 @@ const Testimonials = () => {
 
           <div
             ref={scrollRef}
-            className="testimonials-track flex gap-6 overflow-x-auto pb-4"
+            className="testimonials-track flex gap-0 md:gap-6 overflow-x-auto pb-4"
           >
             {reviews.map((r, i) => (
               <div
