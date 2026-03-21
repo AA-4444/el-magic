@@ -30,7 +30,6 @@ const ContactSection = () => {
           width: 1px;
           background: rgba(255,255,255,0.08);
           pointer-events: none;
-          z-index: 1;
         }
 
         .contact-shell {
@@ -372,7 +371,7 @@ const ContactSection = () => {
 
       <section id="contact" className="relative bg-black py-24 text-white">
         {/* mobile 3 lines */}
-        <div className="pointer-events-none absolute inset-0 z-[1] md:hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 md:hidden">
           <div
             className="contact-grid-line"
             style={{ left: '4%', backgroundColor: 'rgba(255,255,255,0.12)' }}
@@ -387,8 +386,8 @@ const ContactSection = () => {
           />
         </div>
 
-        {/* desktop lines unchanged */}
-        <div className="pointer-events-none absolute inset-0 z-[1] hidden md:block">
+        {/* desktop lines */}
+        <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
           <div className="contact-grid-line left-[7.5%]" />
           <div className="contact-grid-line left-[28.5%]" />
           <div className="contact-grid-line left-1/2" />
@@ -396,7 +395,7 @@ const ContactSection = () => {
           <div className="contact-grid-line right-[7.5%]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1280px] px-6 md:px-10 lg:px-0">
+        <div className="relative z-[2] mx-auto max-w-[1280px] px-6 md:px-10 lg:px-0">
           <div className="contact-shell">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="contact-left animate-on-scroll">

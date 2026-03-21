@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
           min-height: 138px;
           padding: 34px 32px;
           border: 1px solid rgba(255,255,255,0.1);
-          background: rgba(5,5,5,0.96);
+          background: #050505;
           transition:
             transform 0.22s ease,
             border-color 0.22s ease,
@@ -39,7 +39,7 @@ const WhyChooseUs = () => {
         .why-card:hover {
           transform: translateY(-2px);
           border-color: rgba(255,255,255,0.15);
-          background: rgba(8,8,8,0.98);
+          background: #080808;
         }
 
         .why-icon-wrap {
@@ -71,88 +71,88 @@ const WhyChooseUs = () => {
           max-width: 430px;
         }
 
-       .why-main-image-wrap {
-  position: relative;
-  display: block;
-}
+        .why-main-image-wrap {
+          position: relative;
+          display: block;
+        }
 
-.why-main-image {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  border: 1px solid rgba(255,255,255,0.12);
-  aspect-ratio: 5 / 6;
-}
+        .why-main-image {
+          width: 100%;
+          display: block;
+          object-fit: cover;
+          object-position: center;
+          border: 1px solid rgba(255,255,255,0.12);
+          aspect-ratio: 5 / 6;
+        }
 
-@media (min-width: 769px) {
-  .why-main-image-wrap {
-    min-height: 100%;
-    height: 100%;
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-end;
-  }
+        @media (min-width: 769px) {
+          .why-main-image-wrap {
+            min-height: 100%;
+            height: 100%;
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-end;
+          }
 
-  .why-main-image {
-    height: 100%;
-    min-height: 640px;
-    aspect-ratio: auto;
-  }
-}
+          .why-main-image {
+            height: 100%;
+            min-height: 640px;
+            aspect-ratio: auto;
+          }
+        }
 
-@media (max-width: 1279px) and (min-width: 769px) {
-  .why-main-image {
-    min-height: 560px;
-  }
-}
+        @media (max-width: 1279px) and (min-width: 769px) {
+          .why-main-image {
+            min-height: 560px;
+          }
+        }
 
-@media (max-width: 1024px) and (min-width: 769px) {
-  .why-main-image {
-    min-height: 520px;
-  }
-}
+        @media (max-width: 1024px) and (min-width: 769px) {
+          .why-main-image {
+            min-height: 520px;
+          }
+        }
 
-@media (max-width: 768px) {
-  .why-card {
-    min-height: auto;
-    padding: 22px 18px;
-    gap: 16px;
-  }
+        @media (max-width: 768px) {
+          .why-card {
+            min-height: auto;
+            padding: 22px 18px;
+            gap: 16px;
+          }
 
-  .why-icon-wrap {
-    width: 44px;
-    height: 44px;
-  }
+          .why-icon-wrap {
+            width: 44px;
+            height: 44px;
+          }
 
-  .why-title {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
+          .why-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+          }
 
-  .why-desc {
-    font-size: 14px;
-    max-width: none;
-  }
+          .why-desc {
+            font-size: 14px;
+            max-width: none;
+          }
 
-  .why-main-image-wrap {
-    margin-top: 28px;
-    min-height: 0;
-    height: auto;
-  }
+          .why-main-image-wrap {
+            margin-top: 28px;
+            min-height: 0;
+            height: auto;
+          }
 
-  .why-main-image {
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    aspect-ratio: 4 / 5;
-  }
-}
+          .why-main-image {
+            width: 100%;
+            height: auto;
+            min-height: 0;
+            aspect-ratio: 4 / 5;
+          }
+        }
       `}</style>
 
       <section className="relative overflow-hidden bg-black text-white">
         {/* mobile 3 lines */}
-        <div className="pointer-events-none absolute inset-0 z-[1] md:hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 md:hidden">
           <div
             className="why-grid-line"
             style={{ left: '4%', backgroundColor: 'rgba(255,255,255,0.12)' }}
@@ -167,8 +167,8 @@ const WhyChooseUs = () => {
           />
         </div>
 
-        {/* desktop lines unchanged */}
-        <div className="pointer-events-none absolute inset-0 z-[1] hidden md:block">
+        {/* desktop lines */}
+        <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
           <div className="why-grid-line left-[7.5%]" />
           <div className="why-grid-line left-[28.5%]" />
           <div className="why-grid-line left-1/2" />
@@ -176,11 +176,11 @@ const WhyChooseUs = () => {
           <div className="why-grid-line right-[7.5%]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1280px] px-6 py-20 md:px-10 lg:px-0 lg:py-24">
+        <div className="relative z-[2] mx-auto max-w-[1280px] px-6 py-20 md:px-10 lg:px-0 lg:py-24">
           <div className="mb-16 md:mb-20">
             <div className="flex items-center gap-6">
               <div className="h-[74px] w-[2px] bg-[#ff5a1f]" />
-              <h2 className="text-[54px] font-normal leading-none tracking-[-0.04em] text-white md:text-[76px] lg:text-[68px]">
+              <h2 className="text-[40px] font-normal leading-none tracking-[-0.04em] text-white md:text-[76px] lg:text-[68px]">
                 {t?.whyUs?.title}
               </h2>
             </div>

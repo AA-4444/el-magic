@@ -15,7 +15,6 @@ const About = () => {
           width: 1px;
           background: rgba(255,255,255,0.08);
           pointer-events: none;
-          z-index: 1;
         }
 
         .about-shell {
@@ -49,13 +48,15 @@ const About = () => {
           position: absolute;
           inset: 0;
           background:
-            linear-gradient(90deg,
+            linear-gradient(
+              90deg,
               rgba(0,0,0,0.42) 0%,
               rgba(0,0,0,0.26) 24%,
               rgba(0,0,0,0.16) 52%,
               rgba(0,0,0,0.28) 100%
             ),
-            linear-gradient(180deg,
+            linear-gradient(
+              180deg,
               rgba(0,0,0,0.08) 0%,
               rgba(0,0,0,0.18) 100%
             );
@@ -137,8 +138,7 @@ const About = () => {
           content: '';
           position: absolute;
           inset: 0;
-          background:
-            radial-gradient(circle at 50% 82%, rgba(255,90,31,0.12), transparent 24%);
+          background: radial-gradient(circle at 50% 82%, rgba(255,90,31,0.12), transparent 24%);
           pointer-events: none;
         }
 
@@ -272,7 +272,8 @@ const About = () => {
 
           .about-bg::after {
             background:
-              linear-gradient(180deg,
+              linear-gradient(
+                180deg,
                 rgba(0,0,0,0.20) 0%,
                 rgba(0,0,0,0.28) 100%
               );
@@ -334,7 +335,7 @@ const About = () => {
 
       <section id="about" className="relative bg-black py-24 text-white">
         {/* mobile 3 lines */}
-        <div className="pointer-events-none absolute inset-0 z-[1] md:hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 md:hidden">
           <div
             className="about-grid-line"
             style={{ left: '4%', backgroundColor: 'rgba(255,255,255,0.12)' }}
@@ -349,8 +350,8 @@ const About = () => {
           />
         </div>
 
-        {/* desktop lines unchanged */}
-        <div className="pointer-events-none absolute inset-0 z-[1] hidden md:block">
+        {/* desktop lines */}
+        <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
           <div className="about-grid-line left-[7.5%]" />
           <div className="about-grid-line left-[28.5%]" />
           <div className="about-grid-line left-1/2" />
@@ -358,7 +359,7 @@ const About = () => {
           <div className="about-grid-line right-[7.5%]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1280px] px-6 md:px-10 lg:px-0">
+        <div className="relative z-[2] mx-auto max-w-[1280px] px-6 md:px-10 lg:px-0">
           <div className="about-shell">
             <div className="about-bg">
               <img src={aboutImg} alt="Technician inspection" />

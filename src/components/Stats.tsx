@@ -20,7 +20,7 @@ const Stats = () => {
           position: relative;
           min-height: 295px;
           border: 1px solid rgba(255,255,255,0.1);
-          background: rgba(0,0,0,0.92);
+          background: #050505;
           padding: 42px 32px 30px;
           transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
         }
@@ -28,7 +28,7 @@ const Stats = () => {
         .stats-card:hover {
           transform: translateY(-2px);
           border-color: rgba(255,255,255,0.16);
-          background: rgba(5,5,5,0.96);
+          background: #080808;
         }
 
         .stats-value {
@@ -98,7 +98,7 @@ const Stats = () => {
 
       <section className="relative overflow-hidden bg-black text-white">
         {/* mobile 3 lines */}
-        <div className="pointer-events-none absolute inset-0 z-[1] md:hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 md:hidden">
           <div
             className="stats-grid-line"
             style={{ left: '4%', backgroundColor: 'rgba(255,255,255,0.12)' }}
@@ -113,8 +113,8 @@ const Stats = () => {
           />
         </div>
 
-        {/* desktop lines unchanged */}
-        <div className="pointer-events-none absolute inset-0 z-[1] hidden md:block">
+        {/* desktop lines */}
+        <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
           <div className="stats-grid-line left-[7.5%]" />
           <div className="stats-grid-line left-[28.5%]" />
           <div className="stats-grid-line left-1/2" />
@@ -122,7 +122,7 @@ const Stats = () => {
           <div className="stats-grid-line right-[7.5%]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1280px] px-6 py-10 md:px-10 md:py-14 lg:px-0 lg:py-16">
+        <div className="relative z-[2] mx-auto max-w-[1280px] px-6 py-10 md:px-10 md:py-14 lg:px-0 lg:py-16">
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:gap-5">
             {stats.map((s, i) => (
               <div

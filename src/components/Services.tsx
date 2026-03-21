@@ -51,6 +51,10 @@ const Services = () => {
           border-bottom: 1px solid rgba(255,255,255,0.12);
         }
 
+        .services-row-open {
+          background: #050505;
+        }
+
         .services-row-open::after {
           content: '';
           position: absolute;
@@ -303,7 +307,7 @@ const Services = () => {
 
       <section id="services" className="relative overflow-hidden bg-black text-white">
         {/* mobile 3 lines */}
-        <div className="pointer-events-none absolute inset-0 z-[1] md:hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 md:hidden">
           <div
             className="services-grid-line"
             style={{ left: '4%', backgroundColor: 'rgba(255,255,255,0.12)' }}
@@ -318,8 +322,8 @@ const Services = () => {
           />
         </div>
 
-        {/* desktop lines unchanged */}
-        <div className="pointer-events-none absolute inset-0 z-[1] hidden md:block">
+        {/* desktop lines */}
+        <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
           <div className="services-grid-line left-[7.5%]" />
           <div className="services-grid-line left-[28.5%]" />
           <div className="services-grid-line left-1/2" />
@@ -327,7 +331,7 @@ const Services = () => {
           <div className="services-grid-line right-[7.5%]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1280px] px-6 py-20 md:px-10 lg:px-0 lg:py-24">
+        <div className="relative z-[2] mx-auto max-w-[1280px] px-6 py-20 md:px-10 lg:px-0 lg:py-24">
           <div className="mb-16 md:mb-20">
             <div className="flex items-center gap-6">
               <div className="h-[74px] w-[2px] bg-[#ff5a1f]" />

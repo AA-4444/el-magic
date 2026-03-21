@@ -79,7 +79,7 @@ export const translations = {
       title: 'Ready to Give Your Car the Care It Deserves?',
       desc: 'Schedule a wash or repair in minutes — our experts are here 7 days a week to keep your car running perfectly.',
       bookNow: 'Book Now',
-      phone: '(555) 123-4567',
+      phone: '+48 577 472 788',
     },
     form: {
       title: 'Quick Booking',
@@ -172,7 +172,7 @@ export const translations = {
       title: 'Gotowy Zadbać o Swój Samochód?',
       desc: 'Umów mycie lub naprawę w kilka minut — nasi eksperci są dostępni 7 dni w tygodniu.',
       bookNow: 'Umów Teraz',
-      phone: '(555) 123-4567',
+      phone: '+48 577 472 788',
     },
     form: {
       title: 'Szybka Rezerwacja',
@@ -265,7 +265,7 @@ export const translations = {
       title: 'Готові Подбати про Ваш Автомобіль?',
       desc: 'Запишіться на миття або ремонт за кілька хвилин — наші експерти працюють 7 днів на тиждень.',
       bookNow: 'Записатися',
-      phone: '(555) 123-4567',
+      phone: '+48 577 472 788',
     },
     form: {
       title: 'Швидке Бронювання',

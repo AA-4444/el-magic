@@ -63,20 +63,20 @@ const Pricing = () => {
 
         .pricing-card-popular {
           background:
-            linear-gradient(90deg, rgba(255,90,31,0.12) 0%, rgba(255,90,31,0.03) 22%, rgba(5,5,5,1) 55%);
+            linear-gradient(90deg, rgba(255,90,31,0.12) 0%, rgba(255,90,31,0.03) 22%, #050505 55%);
           border-color: rgba(255, 111, 44, 0.22);
         }
 
         .pricing-card-header-box {
-          border: 1px solid rgba(255,255,255,0.04);
-          background: rgba(255,255,255,0.015);
+          border: 1px solid rgba(255,255,255,0.06);
+          background: #080808;
           padding: 24px 24px 22px;
           margin-bottom: 34px;
         }
 
         .pricing-card-popular .pricing-card-header-box {
           background:
-            linear-gradient(90deg, rgba(255,90,31,0.08) 0%, rgba(255,255,255,0.01) 40%, rgba(255,255,255,0.01) 100%);
+            linear-gradient(90deg, rgba(255,90,31,0.08) 0%, #080808 40%, #080808 100%);
         }
 
         .pricing-plan-top {
@@ -285,7 +285,7 @@ const Pricing = () => {
 
       <section id="pricing" className="relative bg-black py-24 text-white">
         {/* mobile 3 lines */}
-        <div className="pointer-events-none absolute inset-0 z-[1] md:hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 md:hidden">
           <div
             className="pricing-grid-line"
             style={{ left: '4%', backgroundColor: 'rgba(255,255,255,0.12)' }}
@@ -300,8 +300,8 @@ const Pricing = () => {
           />
         </div>
 
-        {/* desktop lines unchanged */}
-        <div className="pointer-events-none absolute inset-0 z-[1] hidden md:block">
+        {/* desktop lines */}
+        <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
           <div className="pricing-grid-line left-[7.5%]" />
           <div className="pricing-grid-line left-[28.5%]" />
           <div className="pricing-grid-line left-1/2" />
@@ -309,7 +309,7 @@ const Pricing = () => {
           <div className="pricing-grid-line right-[7.5%]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1280px] px-6 md:px-10 lg:px-0">
+        <div className="relative z-[2] mx-auto max-w-[1280px] px-6 md:px-10 lg:px-0">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="animate-on-scroll lg:sticky lg:top-32 lg:self-start">
               <div className="mb-6 flex items-start gap-6">

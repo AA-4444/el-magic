@@ -96,7 +96,7 @@ const Testimonials = () => {
           max-width: 440px;
           min-height: 382px;
           border: 1px solid rgba(255,255,255,0.11);
-          background: #030303;
+          background: #050505;
           padding: 34px 30px 28px;
           flex-shrink: 0;
           scroll-snap-align: start;
@@ -112,7 +112,7 @@ const Testimonials = () => {
         .testimonial-card:hover {
           transform: translateY(-2px);
           border-color: rgba(255,255,255,0.16);
-          background: #060606;
+          background: #080808;
         }
 
         .testimonial-stars {
@@ -143,8 +143,7 @@ const Testimonials = () => {
           width: 44px;
           height: 44px;
           border: 1px solid rgba(255,255,255,0.08);
-          background:
-            linear-gradient(180deg, #202020 0%, #0f0f0f 100%);
+          background: linear-gradient(180deg, #202020 0%, #0f0f0f 100%);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -241,7 +240,7 @@ const Testimonials = () => {
 
       <section className="relative bg-black py-24 text-white">
         {/* mobile 3 lines */}
-        <div className="pointer-events-none absolute inset-0 z-[1] md:hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 md:hidden">
           <div
             className="testimonials-grid-line"
             style={{ left: '4%', backgroundColor: 'rgba(255,255,255,0.12)' }}
@@ -256,8 +255,8 @@ const Testimonials = () => {
           />
         </div>
 
-        {/* desktop lines unchanged */}
-        <div className="pointer-events-none absolute inset-0 z-[1] hidden md:block">
+        {/* desktop lines */}
+        <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
           <div className="testimonials-grid-line left-[7.5%]" />
           <div className="testimonials-grid-line left-[28.5%]" />
           <div className="testimonials-grid-line left-1/2" />
@@ -265,7 +264,7 @@ const Testimonials = () => {
           <div className="testimonials-grid-line right-[7.5%]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1280px] px-6 md:px-10 lg:px-0">
+        <div className="relative z-[2] mx-auto max-w-[1280px] px-6 md:px-10 lg:px-0">
           <div className="mb-12 animate-on-scroll md:mb-14">
             <div className="mb-5 flex items-start gap-6">
               <div className="mt-2 h-[72px] w-[2px] bg-primary" />

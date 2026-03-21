@@ -106,7 +106,7 @@ const Hero = () => {
         }
       `}</style>
 
-      <section className="relative h-[90svh] min-h-[780px] overflow-hidden bg-black text-white md:h-screen md:min-h-[820px]">
+     <section className="relative h-[82svh] min-h-[700px] overflow-hidden bg-black text-white md:h-screen md:min-h-[820px]">
         <div className="absolute inset-0">
           <img
             src={heroBg}
