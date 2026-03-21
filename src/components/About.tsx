@@ -25,6 +25,7 @@ const About = () => {
           box-sizing: border-box;
           min-height: 900px;
           background: #000;
+          overflow: hidden;
         }
 
         .about-bg {
@@ -39,6 +40,8 @@ const About = () => {
           object-fit: cover;
           object-position: center center;
           display: block;
+          transform: translateZ(0);
+          backface-visibility: hidden;
         }
 
         .about-bg::after {
@@ -91,10 +94,6 @@ const About = () => {
           border-bottom: 1px solid rgba(255,255,255,0.18);
         }
 
-        .about-stat:first-child {
-          border-top: 0;
-        }
-
         .about-stat-value {
           margin: 0 0 22px;
           color: #f5f5f5;
@@ -116,6 +115,8 @@ const About = () => {
           display: flex;
           align-items: center;
           justify-content: flex-end;
+          transform: translateZ(0);
+          backface-visibility: hidden;
         }
 
         .about-panel {
@@ -128,6 +129,8 @@ const About = () => {
           backdrop-filter: blur(14px);
           -webkit-backdrop-filter: blur(14px);
           box-shadow: 0 24px 70px rgba(0,0,0,0.20);
+          transform: translateZ(0);
+          backface-visibility: hidden;
         }
 
         .about-panel::before {
@@ -263,7 +266,20 @@ const About = () => {
         }
 
         @media (max-width: 768px) {
+          .about-shell {
+            min-height: auto;
+          }
+
+          .about-bg::after {
+            background:
+              linear-gradient(180deg,
+                rgba(0,0,0,0.20) 0%,
+                rgba(0,0,0,0.28) 100%
+              );
+          }
+
           .about-inner {
+            min-height: auto;
             padding: 20px 16px;
           }
 
@@ -282,6 +298,10 @@ const About = () => {
 
           .about-panel {
             padding: 34px 18px 30px;
+            background: rgba(22, 22, 24, 0.72);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            box-shadow: 0 14px 34px rgba(0,0,0,0.18);
           }
 
           .about-title {
@@ -301,6 +321,13 @@ const About = () => {
             min-width: 190px;
             height: 46px;
             font-size: 14px;
+          }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+          .about-cta:hover {
+            transform: none;
+            background: #ff5a1f;
           }
         }
       `}</style>

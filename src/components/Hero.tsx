@@ -168,25 +168,25 @@ const Hero = () => {
 
         <div className="relative z-10 flex h-full items-start md:items-center">
           <div className="w-full px-4 sm:px-6 md:px-12 lg:px-0">
-            <div className="mx-auto max-w-[332px] pt-[340px] text-center sm:max-w-[350px] sm:pt-[350px] md:mx-0 md:max-w-[760px] md:pt-24 md:text-left md:ml-[4%] lg:ml-[6%]">
-              <h1 className="animate-on-scroll font-semibold leading-[0.94] tracking-[-0.045em] text-white md:hidden">
-                <span className="block text-[40px]">Your Car</span>
-                <span className="mt-1 block text-[40px]">Deserves</span>
-                <span className="mt-1 block text-[41px] text-primary">Expert Care</span>
-              </h1>
+          <div className="mx-auto max-w-[332px] pt-[340px] text-center sm:max-w-[350px] sm:pt-[350px] md:mx-0 md:max-w-[760px] md:pt-24 md:text-left md:ml-[4%] lg:ml-[6%]">
+  <h1 className="animate-on-scroll font-semibold leading-[0.92] tracking-[-0.05em] text-white md:hidden">
+    <span className="block text-[46px]">Your Car</span>
+    <span className="mt-1 block text-[46px]">Deserves</span>
+    <span className="mt-1 block text-[47px] text-primary">Expert Care</span>
+  </h1>
 
-              <h1 className="animate-on-scroll hidden text-[84px] font-semibold leading-[0.95] tracking-[-0.03em] text-white md:block lg:text-[96px]">
-                {t.hero.title1}
-                <br />
-                <span className="text-primary">{t.hero.title2}</span>
-              </h1>
+  <h1 className="animate-on-scroll hidden text-[84px] font-semibold leading-[0.95] tracking-[-0.03em] text-white md:block lg:text-[96px]">
+    {t.hero.title1}
+    <br />
+    <span className="text-primary">{t.hero.title2}</span>
+  </h1>
 
-              <p
-                className="animate-on-scroll mx-auto mt-5 max-w-[320px] text-[14px] leading-[1.58] text-white/74 sm:max-w-[332px] sm:text-[15px] md:mx-0 md:mt-8 md:max-w-[680px] md:text-[20px] md:leading-[1.6]"
-                style={{ transitionDelay: '100ms' }}
-              >
-                {t.hero.desc}
-              </p>
+  <p
+    className="animate-on-scroll mx-auto mt-5 max-w-[320px] text-[16px] leading-[1.58] text-white/74 sm:max-w-[332px] sm:text-[16px] md:mx-0 md:mt-8 md:max-w-[680px] md:text-[20px] md:leading-[1.6]"
+    style={{ transitionDelay: '100ms' }}
+  >
+    {t.hero.desc}
+  </p>
 
               <div
                 className="animate-on-scroll mt-8 flex flex-col gap-3 sm:gap-4 md:mt-10 md:flex-row md:flex-wrap md:gap-6"

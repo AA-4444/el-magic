@@ -33,6 +33,8 @@ const Pricing = () => {
           font-weight: 400;
           text-decoration: none;
           transition: transform 0.18s ease, opacity 0.18s ease;
+          transform: translateZ(0);
+          backface-visibility: hidden;
         }
 
         .pricing-left-cta:hover {
@@ -50,6 +52,8 @@ const Pricing = () => {
             border-color 0.2s ease,
             transform 0.2s ease,
             background 0.2s ease;
+          transform: translateZ(0);
+          backface-visibility: hidden;
         }
 
         .pricing-card:hover {
@@ -180,6 +184,8 @@ const Pricing = () => {
             color 0.18s ease,
             transform 0.18s ease,
             border-color 0.18s ease;
+          transform: translateZ(0);
+          backface-visibility: hidden;
         }
 
         .pricing-btn:hover {
@@ -189,6 +195,24 @@ const Pricing = () => {
 
         .pricing-btn:active {
           transform: translateY(1px);
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+          .pricing-card:hover {
+            transform: none;
+            border-color: rgba(255,255,255,0.1);
+            background: #050505;
+          }
+
+          .pricing-btn:hover {
+            transform: none;
+            background: transparent;
+          }
+
+          .pricing-left-cta:hover {
+            transform: none;
+            opacity: 1;
+          }
         }
 
         @media (max-width: 1024px) {
@@ -225,6 +249,7 @@ const Pricing = () => {
 
           .pricing-card {
             padding: 20px 16px 22px;
+            transition: border-color 0.2s ease, background 0.2s ease;
           }
 
           .pricing-card-header-box {
@@ -307,8 +332,7 @@ const Pricing = () => {
               {plans.map((plan: any, i: number) => (
                 <div
                   key={i}
-                  className={`pricing-card animate-on-scroll ${plan.popular ? 'pricing-card-popular' : ''}`}
-                  style={{ transitionDelay: `${i * 100}ms` }}
+                  className={`pricing-card ${plan.popular ? 'pricing-card-popular' : ''}`}
                 >
                   <div className="pricing-card-header-box">
                     <div className="pricing-plan-top">

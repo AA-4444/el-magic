@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -21,17 +21,50 @@ const reviews = [
     role: 'Manager',
     stars: 5,
   },
+  {
+    text: 'Fast diagnostics, clear communication, and excellent repair quality. The team fixed the electrical issue quickly and made the whole process stress-free.',
+    name: 'Robert Wilson',
+    role: 'Business Owner',
+    stars: 5,
+  },
+  {
+    text: 'Very professional service and fair pricing. They explained every step, completed the repair on time, and my car now runs perfectly again.',
+    name: 'Daniel Thompson',
+    role: 'Driver',
+    stars: 4,
+  },
+  {
+    text: 'From inspection to final repair, everything was handled with real care and precision. Reliable specialists I would confidently recommend to anyone.',
+    name: 'Christopher Lee',
+    role: 'Sales Manager',
+    stars: 5,
+  },
 ];
 
 const Testimonials = () => {
   const { t } = useLanguage();
   const scrollRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const scroll = (dir: number) => {
-    scrollRef.current?.scrollBy({
-      left: dir * 460,
+  const goToCard = (index: number) => {
+    const track = scrollRef.current;
+    const card = cardRefs.current[index];
+
+    if (!track || !card) return;
+
+    track.scrollTo({
+      left: card.offsetLeft,
       behavior: 'smooth',
     });
+
+    setActiveIndex(index);
+  };
+
+  const scroll = (dir: number) => {
+    const total = reviews.length;
+    const nextIndex = Math.max(0, Math.min(total - 1, activeIndex + dir));
+    goToCard(nextIndex);
   };
 
   return (
@@ -49,6 +82,9 @@ const Testimonials = () => {
         .testimonials-track {
           scrollbar-width: none;
           -ms-overflow-style: none;
+          scroll-behavior: smooth;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
         }
 
         .testimonials-track::-webkit-scrollbar {
@@ -64,10 +100,13 @@ const Testimonials = () => {
           padding: 34px 30px 28px;
           flex-shrink: 0;
           scroll-snap-align: start;
+          scroll-snap-stop: always;
           transition:
             transform 0.22s ease,
             border-color 0.22s ease,
             background 0.22s ease;
+          transform: translateZ(0);
+          backface-visibility: hidden;
         }
 
         .testimonial-card:hover {
@@ -158,6 +197,13 @@ const Testimonials = () => {
           transform: translateY(1px);
         }
 
+        @media (hover: none) and (pointer: coarse) {
+          .testimonial-card:hover,
+          .testimonial-nav:hover {
+            transform: none;
+          }
+        }
+
         @media (max-width: 1024px) {
           .testimonial-card {
             min-width: 390px;
@@ -235,13 +281,15 @@ const Testimonials = () => {
 
           <div
             ref={scrollRef}
-            className="testimonials-track flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory"
+            className="testimonials-track flex gap-6 overflow-x-auto pb-4"
           >
-            {[...reviews, ...reviews].map((r, i) => (
+            {reviews.map((r, i) => (
               <div
                 key={i}
-                className="testimonial-card animate-on-scroll"
-                style={{ transitionDelay: `${(i % 3) * 80}ms` }}
+                ref={(el) => {
+                  cardRefs.current[i] = el;
+                }}
+                className="testimonial-card"
               >
                 <div className="testimonial-stars">
                   {Array.from({ length: 5 }).map((_, j) => (

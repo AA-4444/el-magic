@@ -30,6 +30,7 @@ const Navbar = () => {
           position: fixed;
           top: 0;
           right: 0;
+          height: 100vh;
           height: 100dvh;
           width: 18rem;
           background:
@@ -91,13 +92,6 @@ const Navbar = () => {
           border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
-
-@media (max-width: 767px) {
-  .menu-link:last-child {
-    border-bottom: 0;
-  }
-}
-
         .menu-link:hover {
           color: #ff5a1f;
           transform: translateX(2px);
@@ -153,45 +147,51 @@ const Navbar = () => {
           transform: translateY(-1px);
         }
 
-        @media (max-width: 767px) {
-          .menu-drawer {
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: 60dvh;
-            border-left: 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.34);
-            transform: translateY(-100%);
-          }
+    @media (max-width: 767px) {
+  .menu-drawer {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: clamp(420px, 60vh, 520px);
+    max-height: clamp(420px, 60vh, 520px);
+    border-left: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.34);
+    transform: translateY(-100%);
+    overflow: hidden;
+  }
 
-          .menu-drawer-open {
-            transform: translateY(0);
-          }
+  .menu-drawer-open {
+    transform: translateY(0);
+  }
 
-          .menu-drawer::before {
-            right: auto;
-            left: 50%;
-            bottom: -100px;
-            transform: translateX(-50%);
-            width: 300px;
-            height: 220px;
-          }
+  .menu-drawer::before {
+    right: auto;
+    left: 50%;
+    bottom: -100px;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 220px;
+  }
 
-          .menu-link {
-            padding: 16px 0;
-          }
+  .menu-link {
+    padding: 16px 0;
+  }
 
-          .menu-link-text {
-            font-size: 28px;
-          }
+  .menu-link-text {
+    font-size: 28px;
+  }
 
-          .menu-footer {
-            flex-direction: row;
-            align-items: center;
-          }
-        }
+  .menu-link:last-child {
+    border-bottom: 0;
+  }
+
+  .menu-footer {
+    flex-direction: row;
+    align-items: center;
+  }
+}
       `}</style>
 
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
@@ -218,7 +218,10 @@ const Navbar = () => {
                 {(Object.keys(langLabels) as Lang[]).map((l) => (
                   <button
                     key={l}
-                    onClick={() => { setLang(l); setLangOpen(false); }}
+                    onClick={() => {
+                      setLang(l);
+                      setLangOpen(false);
+                    }}
                     className={`block w-full px-4 py-2 text-sm text-left hover:bg-muted transition-colors ${l === lang ? 'text-primary' : 'text-foreground'}`}
                   >
                     {langLabels[l]}
