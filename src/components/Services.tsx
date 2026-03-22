@@ -25,7 +25,7 @@ const Services = () => {
   const items = t?.services?.items ?? [];
 
   const handleToggle = (i: number) => {
-    setOpenIndex(prev => (prev === i ? -1 : i));
+    setOpenIndex((prev) => (prev === i ? -1 : i));
   };
 
   return (
@@ -147,14 +147,17 @@ const Services = () => {
           flex-direction: column;
           align-items: flex-start;
           max-width: 980px;
+          min-width: 0;
         }
 
         .services-image {
           width: min(100%, 480px);
           height: 310px;
           object-fit: cover;
+          object-position: center;
           display: block;
           margin-bottom: 34px;
+          background: #050505;
         }
 
         .services-subtitle {
@@ -246,6 +249,12 @@ const Services = () => {
         }
 
         @media (max-width: 768px) {
+          .services-row-open::after {
+            width: 42%;
+            background:
+              radial-gradient(circle at 78% 52%, rgba(255, 90, 31, 0.12), transparent 62%);
+          }
+
           .services-trigger {
             grid-template-columns: 56px minmax(0, 1fr) 36px;
             gap: 14px;
@@ -253,9 +262,15 @@ const Services = () => {
           }
 
           .services-content {
-            grid-template-columns: 56px minmax(0, 1fr) 36px;
-            gap: 14px;
-            padding: 0 14px 22px;
+            display: block;
+            padding: 0 14px 22px 14px;
+          }
+
+          .services-content-inner {
+            grid-column: auto;
+            display: block;
+            max-width: none;
+            width: 100%;
           }
 
           .services-title-wrap {
@@ -307,20 +322,22 @@ const Services = () => {
 
       <section id="services" className="relative overflow-hidden bg-black text-white">
         {/* mobile 3 lines */}
-        <div className="pointer-events-none absolute inset-0 z-0 md:hidden">
-          <div
-            className="services-grid-line"
-            style={{ left: '4%', backgroundColor: 'rgba(255,255,255,0.12)' }}
-          />
-          <div
-            className="services-grid-line"
-            style={{ left: '50%', backgroundColor: 'rgba(255,255,255,0.10)' }}
-          />
-          <div
-            className="services-grid-line"
-            style={{ left: '96%', backgroundColor: 'rgba(255,255,255,0.12)' }}
-          />
-        </div>
+       <div className="pointer-events-none absolute inset-0 z-0 md:hidden">
+  <div
+    className="services-grid-line"
+    style={{ left: '4%', backgroundColor: 'rgba(255,255,255,0.12)' }}
+  />
+  <div
+    className="services-grid-line"
+    style={{ left: '50%', backgroundColor: 'rgba(255,255,255,0.10)' }}
+  />
+  <div
+    className="services-grid-line"
+    style={{ left: '96%', backgroundColor: 'rgba(255,255,255,0.12)' }}
+  />
+</div>
+
+<div className="relative z-[2] mx-auto max-w-[1280px] px-[4%] py-20 md:px-10 lg:px-0 lg:py-24"></div>
 
         {/* desktop lines */}
         <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
@@ -331,7 +348,7 @@ const Services = () => {
           <div className="services-grid-line right-[7.5%]" />
         </div>
 
-        <div className="relative z-[2] mx-auto max-w-[1280px] px-[4%] py-20 md:px-10 lg:px-0 lg:py-24">
+        <div className="relative z-[2] mx-auto max-w-[1280px] px-4 py-20 md:px-10 lg:px-0 lg:py-24">
           <div className="mb-16 md:mb-20">
             <div className="flex items-center gap-6">
               <div className="h-[74px] w-[2px] bg-[#ff5a1f]" />

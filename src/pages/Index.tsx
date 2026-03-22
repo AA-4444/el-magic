@@ -38,7 +38,7 @@ const Index = () => {
   return (
     <div className="bg-background text-foreground min-h-screen relative">
      
-      <div className="relative z-[2]">
+     
         <Navbar />
         <Hero />
         <Stats />
@@ -50,7 +50,7 @@ const Index = () => {
        
         <ContactSection />
         <Footer />
-      </div>
+     
     </div>
   );
 };

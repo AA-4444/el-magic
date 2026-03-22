@@ -313,21 +313,6 @@ const Footer = () => {
                   <a href="#" className="footer-social" aria-label="Instagram">
                     <Instagram className="h-6 w-6 stroke-[1.8]" />
                   </a>
-                  <a href="#" className="footer-social" aria-label="YouTube">
-                    <Youtube className="h-6 w-6 stroke-[1.8]" />
-                  </a>
-                  <a href="#" className="footer-social" aria-label="X">
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="h-6 w-6"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                    >
-                      <path d="M4 4L20 20" />
-                      <path d="M20 4L4 20" />
-                    </svg>
-                  </a>
                 </div>
               </div>
 
