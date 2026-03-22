@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { Phone, ChevronDown } from 'lucide-react';
+
+const SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbw2q5oaLuh1ZdjLGDRL_9xEA4dtGhAx-FIntsZHz52MCy_8ibpb8TJxGeX5LHzf70qk/exec';
 
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -8,17 +11,89 @@ const ContactSection = () => {
     name: '',
     phone: '',
     service: '',
-    package: '',
+    time: '',
+    preferredDate: '',
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const timeOptions = [
+    '11:00',
+    '12:00',
+    '13:00',
+    '14:00',
+    '15:00',
+    '16:00',
+    '17:00',
+    '18:00',
+  ];
+
   const serviceOptions = t.services.items.map((s: any) => s.name);
-  const packageOptions = t.pricing.plans.map((p: any) => p.name);
+
+  const todayMinDate = useMemo(() => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }, []);
 
   const selectTextColor =
-    formData.service || formData.package
+    formData.service || formData.time
       ? '#f4f4f4'
       : 'rgba(255,255,255,0.42)';
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (
+      !formData.name ||
+      !formData.phone ||
+      !formData.service ||
+      !formData.time ||
+      !formData.preferredDate
+    ) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          service: formData.service,
+          time: formData.time,
+          preferredDate: formData.preferredDate,
+          message: formData.message,
+        }),
+      });
+
+      alert('Lead sent successfully.');
+
+      setFormData({
+        name: '',
+        phone: '',
+        service: '',
+        time: '',
+        preferredDate: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Submit error:', error);
+      alert('Failed to send the form.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -206,7 +281,8 @@ const ContactSection = () => {
 
         .contact-input,
         .contact-select,
-        .contact-textarea {
+        .contact-textarea,
+        .contact-date {
           width: 100%;
           border: 0;
           outline: none;
@@ -219,7 +295,8 @@ const ContactSection = () => {
         }
 
         .contact-input,
-        .contact-select {
+        .contact-select,
+        .contact-date {
           height: 60px;
           padding: 0 18px;
         }
@@ -237,8 +314,13 @@ const ContactSection = () => {
 
         .contact-input:focus,
         .contact-select:focus,
-        .contact-textarea:focus {
+        .contact-textarea:focus,
+        .contact-date:focus {
           box-shadow: inset 0 0 0 1px rgba(255,90,31,0.45);
+        }
+
+        .contact-date {
+          color-scheme: dark;
         }
 
         .contact-select-wrap {
@@ -281,6 +363,11 @@ const ContactSection = () => {
 
         .contact-submit:active {
           transform: translateY(1px);
+        }
+
+        .contact-submit:disabled {
+          opacity: 0.65;
+          cursor: not-allowed;
         }
 
         @media (max-width: 1200px) {
@@ -351,7 +438,8 @@ const ContactSection = () => {
           }
 
           .contact-input,
-          .contact-select {
+          .contact-select,
+          .contact-date {
             height: 54px;
             font-size: 15px;
           }
@@ -422,7 +510,7 @@ const ContactSection = () => {
                       {t.cta.bookNow}
                     </a>
 
-                    <a href="tel:5551234567" className="contact-phone-btn">
+                    <a href="tel:+48577472788" className="contact-phone-btn">
                       <Phone className="h-5 w-5" />
                       <span>{t.cta.phone}</span>
                     </a>
@@ -436,10 +524,7 @@ const ContactSection = () => {
               >
                 <h3 className="contact-form-title">{t.form.title}</h3>
 
-                <form
-                  className="contact-form"
-                  onSubmit={(e) => e.preventDefault()}
-                >
+                <form className="contact-form" onSubmit={handleSubmit}>
                   <div className="contact-field">
                     <label className="contact-label">
                       {t.form.name}
@@ -504,22 +589,38 @@ const ContactSection = () => {
                     </label>
                     <div className="contact-select-wrap">
                       <select
-                        value={formData.package}
+                        value={formData.time}
                         onChange={(e) =>
-                          setFormData({ ...formData, package: e.target.value })
+                          setFormData({ ...formData, time: e.target.value })
                         }
                         className="contact-select"
                         style={{ color: selectTextColor }}
                       >
                         <option value="">{t.form.select}</option>
-                        {packageOptions.map((p: string) => (
-                          <option key={p} value={p}>
-                            {p}
+                        {timeOptions.map((time: string) => (
+                          <option key={time} value={time}>
+                            {time}
                           </option>
                         ))}
                       </select>
                       <ChevronDown className="contact-select-icon h-5 w-5" />
                     </div>
+                  </div>
+
+                  <div className="contact-field">
+                    <label className="contact-label">
+                      Preferred Date
+                      <span className="required">*</span>
+                    </label>
+                    <input
+                      type="date"
+                      min={todayMinDate}
+                      value={formData.preferredDate}
+                      onChange={(e) =>
+                        setFormData({ ...formData, preferredDate: e.target.value })
+                      }
+                      className="contact-date"
+                    />
                   </div>
 
                   <div className="contact-field">
@@ -535,8 +636,8 @@ const ContactSection = () => {
                     />
                   </div>
 
-                  <button type="submit" className="contact-submit">
-                    {t.form.submit}
+                  <button type="submit" className="contact-submit" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending...' : t.form.submit}
                   </button>
                 </form>
               </div>
