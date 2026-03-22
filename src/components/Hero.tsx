@@ -1,5 +1,5 @@
 import { useLanguage } from '@/lib/LanguageContext';
-import heroBg from '@/assets/hero-bg.jpg';
+import heroBg from '@/assets/hero-test.png';
 
 const Hero = () => {
   const { t } = useLanguage();
