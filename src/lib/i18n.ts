@@ -7,13 +7,13 @@ export const translations = {
     hero: {
       title1: 'Your Car Deserves',
       title2: 'Expert Care',
-      desc: 'From quick washes to full diagnostics, we bring precision, care, and convenience together. Trusted by 5,000+ satisfied customers.',
+      desc: 'From quick washes to full diagnostics, we bring precision, care, and convenience together. Trusted by 4,000+ satisfied customers.',
       cta1: 'Book A Service',
       cta2: 'View Packages',
     },
    stats: {
   s1: {
-    val: '5,000+',
+    val: '4,000+',
     label: 'Satisfied Customers',
     desc: 'From diagnostics to car electronics, chip tuning and audio installation — we deliver precise and reliable service.',
   },
@@ -49,7 +49,7 @@ export const translations = {
         { title: 'Certified Technicians', desc: 'ASE-certified professionals with years of experience.' },
        { title: 'Fast Service', desc: 'We complete most repairs efficiently and without unnecessary delays.' },
         { title: 'Affordable Pricing', desc: 'Transparent rates with no hidden fees.' },
-        { title: 'Trusted by 5,000+', desc: 'Join thousands of satisfied customers.' },
+        { title: 'Trusted by 4,000+', desc: 'Join thousands of satisfied customers.' },
       ],
     },
     pricing: {
@@ -208,14 +208,14 @@ cta: {
     hero: {
       title1: 'Twój Samochód Zasługuje',
       title2: 'Na Profesjonalną Opiekę',
-      desc: 'Od szybkiego mycia po pełną diagnostykę — łączymy precyzję, troskę i wygodę. Zaufało nam ponad 5 000 klientów.',
+      desc: 'Od szybkiego mycia po pełną diagnostykę — łączymy precyzję, troskę i wygodę. Zaufało nam ponad 4 000 klientów.',
       cta1: 'Umów Wizytę',
       cta2: 'Zobacz Pakiety',
     },
    // Polish
 stats: {
   s1: {
-    val: '5 000+',
+    val: '4 000+',
     label: 'Zadowolonych Klientów',
     desc: 'Od diagnostyki po elektronikę samochodową, chip tuning i car audio — zapewniamy precyzyjną i solidną obsługę.',
   },
@@ -252,7 +252,7 @@ stats: {
         { title: 'Certyfikowani Technicy', desc: 'Profesjonaliści z certyfikatem ASE i wieloletnim doświadczeniem.' },
         { title: 'Szybka Obsługa', desc: 'Większość napraw realizujemy sprawnie i bez zbędnej zwłoki.' },
         { title: 'Przystępne Ceny', desc: 'Przejrzyste stawki bez ukrytych opłat.' },
-        { title: 'Zaufało Nam 5 000+', desc: 'Dołącz do tysięcy zadowolonych klientów.' },
+        { title: 'Zaufało Nam 4 000+', desc: 'Dołącz do tysięcy zadowolonych klientów.' },
       ],
     },
     pricing: {
@@ -410,14 +410,14 @@ cta: {
     hero: {
       title1: 'Ваш Автомобіль Заслуговує',
       title2: 'Експертного Догляду',
-      desc: 'Від швидкого миття до повної діагностики — ми поєднуємо точність, турботу та зручність. Нам довіряють понад 5 000 клієнтів.',
+      desc: 'Від швидкого миття до повної діагностики — ми поєднуємо точність, турботу та зручність. Нам довіряють понад 4 000 клієнтів.',
       cta1: 'Записатися',
       cta2: 'Переглянути Пакети',
     },
     // Ukrainian
 stats: {
   s1: {
-    val: '5 000+',
+    val: '4 000+',
     label: 'Задоволених Клієнтів',
     desc: 'Від діагностики до автоелектроніки, чип-тюнінгу та car audio — ми забезпечуємо точний і надійний сервіс.',
   },
@@ -453,7 +453,7 @@ stats: {
         { title: 'Сертифіковані Техніки', desc: 'Професіонали з сертифікатом ASE та багаторічним досвідом.' },
        { title: 'Швидке обслуговування', desc: 'Більшість ремонтів ми виконуємо оперативно та без зайвих затримок.' },
         { title: 'Доступні Ціни', desc: 'Прозорі ціни без прихованих платежів.' },
-        { title: 'Довіряють 5 000+', desc: 'Приєднуйтесь до тисяч задоволених клієнтів.' },
+        { title: 'Довіряють 4 000+', desc: 'Приєднуйтесь до тисяч задоволених клієнтів.' },
       ],
     },
     pricing: {
