@@ -11,11 +11,23 @@ export const translations = {
       cta1: 'Book A Service',
       cta2: 'View Packages',
     },
-    stats: {
-      s1: { val: '5,000+', label: 'Happy Customers', desc: 'From quick washes to full diagnostics, we bring precision, care, and convenience together.' },
-      s2: { val: '5+', label: 'Years Experience', desc: 'Trusted automotive expertise built over years of dedicated service.' },
-      s3: { val: '10/5', label: 'Support Available', desc: 'Dedicated customer support for every service request.' },
-    },
+   stats: {
+  s1: {
+    val: '5,000+',
+    label: 'Satisfied Customers',
+    desc: 'From diagnostics to car electronics, chip tuning and audio installation — we deliver precise and reliable service.',
+  },
+  s2: {
+    val: '5+',
+    label: 'Years Experience',
+    desc: 'Trusted automotive electronics and diagnostics expertise built over years of dedicated work.',
+  },
+  s3: {
+    val: '10/5',
+    label: 'Support Available',
+    desc: 'Clear communication and dedicated support for every service request.',
+  },
+},
     services: {
       title: 'Our Services',
    items: [
@@ -170,12 +182,13 @@ export const translations = {
       title: 'Car Care Tips & Insights',
       desc: 'Stay informed with expert advice, maintenance tips, and industry news.',
     },
-    cta: {
-      title: 'Ready to Give Your Car the Care It Deserves?',
-      desc: 'Schedule a wash or repair in minutes — our experts are here 7 days a week to keep your car running perfectly.',
-      bookNow: 'Book Now',
-      phone: '+48 577 472 788',
-    },
+   // English
+cta: {
+  title: 'Ready to Take Care of Your Car?',
+  desc: 'Book diagnostics, car electronics repair, chip tuning or audio installation — our specialists are ready to help.',
+  bookNow: 'Book Now',
+  phone: '+48 577 472 788',
+},
     form: {
       title: 'Quick Booking',
       name: 'Name',
@@ -199,11 +212,24 @@ export const translations = {
       cta1: 'Umów Wizytę',
       cta2: 'Zobacz Pakiety',
     },
-    stats: {
-      s1: { val: '5 000+', label: 'Zadowolonych Klientów', desc: 'Od szybkiego mycia po pełną diagnostykę — łączymy precyzję, troskę i wygodę.' },
-      s2: { val: '5+', label: 'Lat Doświadczenia', desc: 'Zaufana wiedza motoryzacyjna budowana latami.' },
-      s3: { val: '10/5', label: 'Wsparcie Dostępne', desc: 'Dedykowana obsługa klienta przy każdym zleceniu.' },
-    },
+   // Polish
+stats: {
+  s1: {
+    val: '5 000+',
+    label: 'Zadowolonych Klientów',
+    desc: 'Od diagnostyki po elektronikę samochodową, chip tuning i car audio — zapewniamy precyzyjną i solidną obsługę.',
+  },
+  s2: {
+    val: '5+',
+    label: 'Lat Doświadczenia',
+    desc: 'Sprawdzone doświadczenie w elektronice samochodowej i diagnostyce, budowane przez lata pracy.',
+  },
+  s3: {
+    val: '10/5',
+    label: 'Wsparcie Dostępne',
+    desc: 'Jasna komunikacja i indywidualne wsparcie przy każdym zleceniu.',
+  },
+},
     services: {
       title: 'Nasze Usługi',
       items: [
@@ -358,12 +384,13 @@ export const translations = {
       title: 'Porady i Wskazówki',
       desc: 'Bądź na bieżąco z poradami ekspertów i nowinkami z branży.',
     },
-    cta: {
-      title: 'Gotowy Zadbać o Swój Samochód?',
-      desc: 'Umów mycie lub naprawę w kilka minut — nasi eksperci są dostępni 7 dni w tygodniu.',
-      bookNow: 'Umów Teraz',
-      phone: '+48 577 472 788',
-    },
+  // Polish
+cta: {
+  title: 'Gotowy Zadbać o Swoje Auto?',
+  desc: 'Umów diagnostykę, naprawę elektroniki, chip tuning lub montaż car audio — nasi specjaliści są gotowi pomóc.',
+  bookNow: 'Umów Teraz',
+  phone: '+48 577 472 788',
+},
     form: {
       title: 'Szybka Rezerwacja',
       name: 'Imię',
@@ -387,11 +414,24 @@ export const translations = {
       cta1: 'Записатися',
       cta2: 'Переглянути Пакети',
     },
-    stats: {
-      s1: { val: '5 000+', label: 'Задоволених Клієнтів', desc: 'Від швидкого миття до повної діагностики — ми поєднуємо точність, турботу та зручність.' },
-      s2: { val: '5+', label: 'Років Досвіду', desc: 'Перевірена автомобільна експертиза, побудована роками.' },
-      s3: { val: '10/5', label: 'Підтримка Доступна', desc: 'Виділена підтримка клієнтів для кожного запиту.' },
-    },
+    // Ukrainian
+stats: {
+  s1: {
+    val: '5 000+',
+    label: 'Задоволених Клієнтів',
+    desc: 'Від діагностики до автоелектроніки, чип-тюнінгу та car audio — ми забезпечуємо точний і надійний сервіс.',
+  },
+  s2: {
+    val: '5+',
+    label: 'Років Досвіду',
+    desc: 'Перевірений досвід в автоелектроніці та діагностиці, здобутий роками роботи.',
+  },
+  s3: {
+    val: '10/5',
+    label: 'Підтримка Доступна',
+    desc: 'Зрозуміла комунікація та індивідуальна підтримка для кожного замовлення.',
+  },
+},
     services: {
       title: 'Наші Послуги',
     items: [
@@ -546,12 +586,12 @@ export const translations = {
       title: 'Поради та Інсайти',
       desc: 'Будьте в курсі з порадами експертів та новинами галузі.',
     },
-    cta: {
-      title: 'Готові Подбати про Ваш Автомобіль?',
-      desc: 'Запишіться на миття або ремонт за кілька хвилин — наші експерти працюють 7 днів на тиждень.',
-      bookNow: 'Записатися',
-      phone: '+48 577 472 788',
-    },
+cta: {
+  title: 'Готові Подбати про Ваш Автомобіль?',
+  desc: 'Запишіться на діагностику, ремонт автоелектроніки, чип-тюнінг або встановлення car audio — наші спеціалісти готові допомогти.',
+  bookNow: 'Записатися',
+  phone: '+48 577 472 788',
+},
     form: {
       title: 'Швидке Бронювання',
       name: "Ім'я",
