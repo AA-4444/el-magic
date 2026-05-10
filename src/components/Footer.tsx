@@ -354,7 +354,7 @@ const Footer = () => {
 
                   <li className="footer-contact-item">
                     <Mail className="footer-contact-icon h-6 w-6 stroke-[1.8]" />
-                    <p className="footer-meta">elmagic@gmail.com</p>
+                    <p className="footer-meta">ekimyans@gmail.com</p>
                   </li>
 
                   <li className="footer-contact-item">
