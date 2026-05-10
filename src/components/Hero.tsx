@@ -95,6 +95,22 @@ const Hero = () => {
           pointer-events: none;
         }
 
+        .hero-mobile-title-line {
+          display: block;
+          margin-top: 6px;
+        }
+
+        .hero-mobile-title-line:first-child {
+          margin-top: 0;
+        }
+
+        .hero-mobile-na {
+          color: #ffffff;
+          font: inherit;
+          letter-spacing: inherit;
+          text-transform: none;
+        }
+
         @media (max-width: 767px) {
           .hero-btn {
             width: 100%;
@@ -120,47 +136,80 @@ const Hero = () => {
 
         {/* mobile 5 lines */}
         <div className="pointer-events-none absolute inset-0 z-[4] md:hidden">
-          <div className="hero-guide-line" style={{ left: '8%', backgroundColor: 'rgba(255,255,255,0.18)' }} />
-          <div className="hero-guide-line" style={{ left: '28%', backgroundColor: 'rgba(255,255,255,0.14)' }} />
-          <div className="hero-guide-line" style={{ left: '50%', backgroundColor: 'rgba(255,255,255,0.14)' }} />
-          <div className="hero-guide-line" style={{ left: '72%', backgroundColor: 'rgba(255,255,255,0.14)' }} />
-          <div className="hero-guide-line" style={{ left: '92%', backgroundColor: 'rgba(255,255,255,0.18)' }} />
+          <div
+            className="hero-guide-line"
+            style={{ left: '8%', backgroundColor: 'rgba(255,255,255,0.18)' }}
+          />
+          <div
+            className="hero-guide-line"
+            style={{ left: '28%', backgroundColor: 'rgba(255,255,255,0.14)' }}
+          />
+          <div
+            className="hero-guide-line"
+            style={{ left: '50%', backgroundColor: 'rgba(255,255,255,0.14)' }}
+          />
+          <div
+            className="hero-guide-line"
+            style={{ left: '72%', backgroundColor: 'rgba(255,255,255,0.14)' }}
+          />
+          <div
+            className="hero-guide-line"
+            style={{ left: '92%', backgroundColor: 'rgba(255,255,255,0.18)' }}
+          />
         </div>
 
         {/* desktop 5 lines */}
         <div className="pointer-events-none absolute inset-0 z-[4] hidden md:block">
-          <div className="hero-guide-line" style={{ left: '7.5%', backgroundColor: 'rgba(255,255,255,0.18)' }} />
-          <div className="hero-guide-line" style={{ left: '28.5%', backgroundColor: 'rgba(255,255,255,0.14)' }} />
-          <div className="hero-guide-line" style={{ left: '50%', backgroundColor: 'rgba(255,255,255,0.14)' }} />
-          <div className="hero-guide-line" style={{ left: '71.5%', backgroundColor: 'rgba(255,255,255,0.14)' }} />
-          <div className="hero-guide-line" style={{ left: '92.5%', backgroundColor: 'rgba(255,255,255,0.18)' }} />
+          <div
+            className="hero-guide-line"
+            style={{ left: '7.5%', backgroundColor: 'rgba(255,255,255,0.18)' }}
+          />
+          <div
+            className="hero-guide-line"
+            style={{ left: '28.5%', backgroundColor: 'rgba(255,255,255,0.14)' }}
+          />
+          <div
+            className="hero-guide-line"
+            style={{ left: '50%', backgroundColor: 'rgba(255,255,255,0.14)' }}
+          />
+          <div
+            className="hero-guide-line"
+            style={{ left: '71.5%', backgroundColor: 'rgba(255,255,255,0.14)' }}
+          />
+          <div
+            className="hero-guide-line"
+            style={{ left: '92.5%', backgroundColor: 'rgba(255,255,255,0.18)' }}
+          />
         </div>
 
         <div className="relative z-10 flex h-full items-start md:items-center">
           <div className="w-full px-4 sm:px-6 md:px-12 lg:px-0">
             <div className="mx-auto max-w-[332px] pt-[210px] text-center sm:max-w-[350px] sm:pt-[225px] md:mx-0 md:max-w-[760px] md:pt-24 md:text-left md:ml-[4%] lg:ml-[6%]">
-              <h1 className="animate-on-scroll font-semibold leading-[0.92] tracking-[-0.05em] text-white md:hidden">
+              <h1 className="animate-on-scroll font-semibold leading-[0.98] tracking-[-0.05em] text-white md:hidden">
                 {t.hero.title1 === 'Twój Samochód Zasługuje' ? (
                   <>
-                    <span className="block text-[46px]">Twój</span>
-                    <span className="block text-[46px]">Samochód</span>
-                    <span className="mt-1 block text-[41px]">
-                      Zasługuje{' '}
-                      <span className="align-baseline text-[30px] text-white">
-                        Na
-                      </span>
+                    <span className="hero-mobile-title-line text-[42px]">
+                      Twój
                     </span>
-                    <span className="mt-1 block text-[41px] text-primary">
+                    <span className="hero-mobile-title-line text-[42px]">
+                      Samochód
+                    </span>
+                    <span className="hero-mobile-title-line text-[42px]">
+                      Zasługuje <span className="hero-mobile-na">na</span>
+                    </span>
+                    <span className="hero-mobile-title-line text-[42px] text-primary">
                       Profesjonalną
                     </span>
-                    <span className="mt-1 block text-[41px] text-primary">
+                    <span className="hero-mobile-title-line text-[42px] text-primary">
                       Opiekę
                     </span>
                   </>
                 ) : (
                   <>
-                    <span className="block text-[46px]">{t.hero.title1}</span>
-                    <span className="mt-1 block text-[47px] text-primary">
+                    <span className="hero-mobile-title-line text-[46px]">
+                      {t.hero.title1}
+                    </span>
+                    <span className="hero-mobile-title-line text-[47px] text-primary">
                       {t.hero.title2}
                     </span>
                   </>
