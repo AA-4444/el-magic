@@ -1,12 +1,13 @@
 import { useMemo, useState } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
-import { Phone, ChevronDown } from 'lucide-react';
+import { Phone, ChevronDown, CheckCircle, X } from 'lucide-react';
 
 const SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbw2q5oaLuh1ZdjLGDRL_9xEA4dtGhAx-FIntsZHz52MCy_8ibpb8TJxGeX5LHzf70qk/exec';
 
 const ContactSection = () => {
   const { t } = useLanguage();
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -17,6 +18,7 @@ const ContactSection = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successOpen, setSuccessOpen] = useState(false);
 
   const timeOptions = [
     '11:00',
@@ -54,7 +56,7 @@ const ContactSection = () => {
       !formData.time ||
       !formData.preferredDate
     ) {
-      alert('Please fill in all required fields.');
+      alert(t.form.requiredAlert);
       return;
     }
 
@@ -77,8 +79,6 @@ const ContactSection = () => {
         }),
       });
 
-      alert('Lead sent successfully.');
-
       setFormData({
         name: '',
         phone: '',
@@ -87,9 +87,11 @@ const ContactSection = () => {
         preferredDate: '',
         message: '',
       });
+
+      setSuccessOpen(true);
     } catch (error) {
       console.error('Submit error:', error);
-      alert('Failed to send the form.');
+      alert(t.form.errorAlert);
     } finally {
       setIsSubmitting(false);
     }
@@ -370,6 +372,115 @@ const ContactSection = () => {
           cursor: not-allowed;
         }
 
+        .success-overlay {
+          position: fixed;
+          inset: 0;
+          z-index: 9999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+          background: rgba(0,0,0,0.72);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+        }
+
+        .success-modal {
+          position: relative;
+          width: min(100%, 460px);
+          border: 1px solid rgba(255,255,255,0.12);
+          background:
+            radial-gradient(circle at 50% 0%, rgba(255,90,31,0.18), transparent 45%),
+            linear-gradient(180deg, #090909 0%, #030303 100%);
+          padding: 42px 30px 30px;
+          text-align: center;
+          box-shadow: 0 24px 80px rgba(0,0,0,0.48);
+          overflow: hidden;
+        }
+
+        .success-modal::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          height: 2px;
+          background: #ff5a1f;
+        }
+
+        .success-close {
+          position: absolute;
+          top: 14px;
+          right: 14px;
+          width: 36px;
+          height: 36px;
+          border: 1px solid rgba(255,255,255,0.1);
+          background: rgba(255,255,255,0.03);
+          color: rgba(255,255,255,0.82);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.18s ease, color 0.18s ease;
+        }
+
+        .success-close:hover {
+          background: rgba(255,255,255,0.08);
+          color: #fff;
+        }
+
+        .success-icon {
+          width: 68px;
+          height: 68px;
+          margin: 0 auto 22px;
+          border: 1px solid rgba(255,90,31,0.42);
+          background: rgba(255,90,31,0.1);
+          color: #ff5a1f;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .success-title {
+          margin: 0 0 12px;
+          color: #f5f5f5;
+          font-size: 30px;
+          line-height: 1.08;
+          font-weight: 400;
+          letter-spacing: -0.04em;
+        }
+
+        .success-desc {
+          max-width: 360px;
+          margin: 0 auto 26px;
+          color: rgba(255,255,255,0.68);
+          font-size: 15px;
+          line-height: 1.55;
+        }
+
+        .success-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 50px;
+          border: 0;
+          border-radius: 4px;
+          background: #ff5a1f;
+          color: #fff;
+          font-size: 16px;
+          font-weight: 400;
+          transition: transform 0.18s ease, background 0.18s ease;
+        }
+
+        .success-btn:hover {
+          background: #ff6229;
+          transform: translateY(-1px);
+        }
+
+        .success-btn:active {
+          transform: translateY(1px);
+        }
+
         @media (max-width: 1200px) {
           .contact-left,
           .contact-right {
@@ -453,6 +564,14 @@ const ContactSection = () => {
             height: 52px;
             font-size: 16px;
             border-radius: 12px;
+          }
+
+          .success-modal {
+            padding: 40px 22px 24px;
+          }
+
+          .success-title {
+            font-size: 27px;
           }
         }
       `}</style>
@@ -609,7 +728,7 @@ const ContactSection = () => {
 
                   <div className="contact-field">
                     <label className="contact-label">
-                      Preferred Date
+                      {t.form.preferredDate}
                       <span className="required">*</span>
                     </label>
                     <input
@@ -617,7 +736,10 @@ const ContactSection = () => {
                       min={todayMinDate}
                       value={formData.preferredDate}
                       onChange={(e) =>
-                        setFormData({ ...formData, preferredDate: e.target.value })
+                        setFormData({
+                          ...formData,
+                          preferredDate: e.target.value,
+                        })
                       }
                       className="contact-date"
                     />
@@ -636,8 +758,12 @@ const ContactSection = () => {
                     />
                   </div>
 
-                  <button type="submit" className="contact-submit" disabled={isSubmitting}>
-                    {isSubmitting ? 'Sending...' : t.form.submit}
+                  <button
+                    type="submit"
+                    className="contact-submit"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? t.form.sending : t.form.submit}
                   </button>
                 </form>
               </div>
@@ -645,6 +771,37 @@ const ContactSection = () => {
           </div>
         </div>
       </section>
+
+      {successOpen && (
+        <div className="success-overlay" onClick={() => setSuccessOpen(false)}>
+          <div className="success-modal" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="success-close"
+              onClick={() => setSuccessOpen(false)}
+              aria-label={t.form.successClose}
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            <div className="success-icon">
+              <CheckCircle className="h-9 w-9 stroke-[1.5]" />
+            </div>
+
+            <h3 className="success-title">{t.form.successTitle}</h3>
+
+            <p className="success-desc">{t.form.successDesc}</p>
+
+            <button
+              type="button"
+              className="success-btn"
+              onClick={() => setSuccessOpen(false)}
+            >
+              {t.form.successClose}
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

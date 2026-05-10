@@ -267,21 +267,35 @@ const About = () => {
 
         @media (max-width: 768px) {
           .about-shell {
-            min-height: auto;
+            min-height: 100svh;
+          }
+
+          .about-bg img {
+            height: 100%;
+            min-height: 100svh;
+            object-fit: cover;
+            object-position: center top;
+            transform: scale(1.08);
+            transform-origin: center top;
           }
 
           .about-bg::after {
             background:
               linear-gradient(
                 180deg,
-                rgba(0,0,0,0.20) 0%,
+                rgba(0,0,0,0.58) 0%,
+                rgba(0,0,0,0.34) 28%,
                 rgba(0,0,0,0.28) 100%
               );
           }
 
           .about-inner {
-            min-height: auto;
-            padding: 20px 16px;
+  min-height: 100svh;
+  padding: 56px 16px 20px;
+}
+
+          .about-layout {
+            gap: 32px;
           }
 
           .about-stat {
@@ -333,7 +347,7 @@ const About = () => {
         }
       `}</style>
 
-      <section id="about" className="relative bg-black py-24 text-white">
+      <section id="about" className="relative bg-black py-0 text-white md:py-24">
         {/* mobile 3 lines */}
         <div className="pointer-events-none absolute inset-0 z-0 md:hidden">
           <div

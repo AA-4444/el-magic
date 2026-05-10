@@ -175,7 +175,7 @@ export const translations = {
       title1: 'Passion for Cars.',
       title2: 'Dedication to Service.',
       desc1: 'Founded in 2021, ElectroMagic has been the trusted choice for car owners who demand excellence. What started as a small family workshop has grown into the city\'s premier automotive care center.',
-      desc2: 'Our team of technicians brings decades of combined experience and a genuine passion for automotive care. We treat every vehicle as if it were our own, using only premium products and state-of-the-art equipment.',
+      desc2: 'Our team of technicians brings decades of experience and a true passion for the automotive industry.',
       cta: 'Learn More About Us',
     },
     blog: {
@@ -201,6 +201,20 @@ cta: {
       messagePlaceholder: 'Write your message here...',
       select: 'Select...',
       submit: 'Book Now',
+
+      successTitle: 'Request Sent',
+
+  successDesc: 'Thank you! Your request has been received. We will contact you soon to confirm the details.',
+
+  successClose: 'Close',
+
+  sending: 'Sending...',
+
+  requiredAlert: 'Please fill in all required fields.',
+
+  errorAlert: 'Failed to send the form.',
+
+  preferredDate: 'Preferred Date',
     },
   },
   pl: {
@@ -403,6 +417,20 @@ cta: {
       messagePlaceholder: 'Napisz swoją wiadomość...',
       select: 'Wybierz...',
       submit: 'Zarezerwuj',
+
+       successTitle: 'Zgłoszenie wysłane',
+
+  successDesc: 'Dziękujemy! Otrzymaliśmy Twoje zgłoszenie. Skontaktujemy się wkrótce, aby potwierdzić szczegóły.',
+
+  successClose: 'Zamknij',
+
+  sending: 'Wysyłanie...',
+
+  requiredAlert: 'Wypełnij wszystkie wymagane pola.',
+
+  errorAlert: 'Nie udało się wysłać formularza.',
+
+  preferredDate: 'Preferowana data',
     },
   },
   ua: {
@@ -604,6 +632,28 @@ cta: {
       messagePlaceholder: 'Напишіть ваше повідомлення...',
       select: 'Оберіть...',
       submit: 'Записатися',
+
+      form: {
+  title: 'Швидке Бронювання',
+  name: "Ім'я",
+  phone: 'Телефон',
+  services: 'Оберіть Послуги',
+  packages: 'Час',
+  message: 'Повідомлення',
+  namePlaceholder: "Ваше ім'я",
+  phonePlaceholder: '+48 777 77 77',
+  messagePlaceholder: 'Напишіть ваше повідомлення...',
+  select: 'Оберіть...',
+  submit: 'Записатися',
+
+  successTitle: 'Заявку надіслано',
+  successDesc: 'Дякуємо! Ми отримали вашу заявку. Незабаром звʼяжемося з вами, щоб підтвердити деталі.',
+  successClose: 'Закрити',
+  sending: 'Надсилання...',
+  requiredAlert: 'Заповніть усі обовʼязкові поля.',
+  errorAlert: 'Не вдалося надіслати форму.',
+  preferredDate: 'Бажана дата',
+},
     },
   },
 } as const;
