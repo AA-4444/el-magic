@@ -16,14 +16,16 @@ const Footer = () => {
     { label: 'Contact', href: '#contact' },
   ];
 
-  const services = [
-    'Car Wash & Detailing',
-    'Oil Change & Maintenance',
-    'Engine Diagnostics',
-    'Tire & Brake Service',
-    'AC Repair',
-    'Car Polishing & Waxing',
-  ];
+ const services = [
+  'Chip Tuning',
+  'Computer Diagnostics',
+  'Electrical System Repair',
+  'Car Audio Installation',
+  'Coding & Programming',
+  'Accessory Installation',
+  'Air Conditioning Service',
+  'Headlight Restoration',
+];
 
   return (
     <>
@@ -302,8 +304,8 @@ const Footer = () => {
                 </div>
 
                 <p className="footer-copy">
-                  Your trusted partner for premium car repair and washing services.
-                  Serving the community with excellence since 2010.
+                 Your trusted partner for car electronics, diagnostics, chip tuning and audio installation.
+                  Professional service, clean installation and honest support since 2021.
                 </p>
 
                 <div className="footer-socials">
@@ -358,9 +360,9 @@ const Footer = () => {
                   <li className="footer-contact-item">
                     <MapPin className="footer-contact-icon h-6 w-6 stroke-[1.8]" />
                     <p className="footer-meta">
-                      Wroclaw,
-                      <br />
-                      Sulowska 19 A
+                    Wrocław,
+                    <br />
+                    Sułowska 19A
                     </p>
                   </li>
                 </ul>

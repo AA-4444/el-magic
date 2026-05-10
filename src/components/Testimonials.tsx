@@ -2,47 +2,10 @@ import { useRef, useState } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
-const reviews = [
-  {
-    text: 'Post-service, the vehicle rides smoother, handles confidently — with expert technicians, honest guidance, and a safety-focused automotive team.',
-    name: 'David Martinez',
-    role: 'Entrepreneur',
-    stars: 4,
-  },
-  {
-    text: 'Outstanding service from start to finish. Oil change, inspection, and overall care were handled quickly, professionally, and with great attention.',
-    name: 'Michael Harris',
-    role: 'Car Owner',
-    stars: 4,
-  },
-  {
-    text: 'After their tire and brake service, my car feels much safer and smoother — truly reliable, skilled, and customer-focused automotive service provider.',
-    name: 'James Carter',
-    role: 'Manager',
-    stars: 5,
-  },
-  {
-    text: 'Fast diagnostics, clear communication, and excellent repair quality. The team fixed the electrical issue quickly and made the whole process stress-free.',
-    name: 'Robert Wilson',
-    role: 'Business Owner',
-    stars: 5,
-  },
-  {
-    text: 'Very professional service and fair pricing. They explained every step, completed the repair on time, and my car now runs perfectly again.',
-    name: 'Daniel Thompson',
-    role: 'Driver',
-    stars: 4,
-  },
-  {
-    text: 'From inspection to final repair, everything was handled with real care and precision. Reliable specialists I would confidently recommend to anyone.',
-    name: 'Christopher Lee',
-    role: 'Sales Manager',
-    stars: 5,
-  },
-];
-
 const Testimonials = () => {
   const { t } = useLanguage();
+  const reviews = t.testimonials.reviews;
+
   const scrollRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -280,7 +243,7 @@ const Testimonials = () => {
 
           <div
             ref={scrollRef}
-            className="testimonials-track flex gap-0 md:gap-6 overflow-x-auto pb-4"
+            className="testimonials-track flex gap-0 overflow-x-auto pb-4 md:gap-6"
           >
             {reviews.map((r, i) => (
               <div

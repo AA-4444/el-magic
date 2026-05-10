@@ -2,20 +2,25 @@ import { useState } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { Plus, Minus } from 'lucide-react';
 
-import serviceCarwash from '@/assets/service-carwash.jpg';
-import serviceOil from '@/assets/service-oil.jpg';
-import serviceDiag from '@/assets/service-diagnostics.jpg';
-import serviceTire from '@/assets/service-tire.jpg';
-import serviceAc from '@/assets/service-ac.jpg';
-import servicePolish from '@/assets/service-polish.jpg';
+
+import serviceChip from '@/assets/chip.jpg'
+import serviceElectric from '@/assets/electric.jpg'
+import serviceDiag from '@/assets/diagnostick.jpg';
+import serviceAudio from '@/assets/audio.jpg'
+import serviceProg from '@/assets/progr.jpg'
+import serviceKlima from '@/assets/klima.jpg'
+import serviceLight from '@/assets/lights.jpg'
+import serviceAccess from '@/assets/access.jpg'
 
 const images = [
-  serviceCarwash,
-  serviceOil,
+  serviceChip,
   serviceDiag,
-  serviceTire,
-  serviceAc,
-  servicePolish,
+  serviceElectric,
+  serviceAudio,
+  serviceProg,
+ serviceAccess,
+   serviceKlima,
+   serviceLight,
 ];
 
 const Services = () => {
@@ -337,7 +342,7 @@ const Services = () => {
   />
 </div>
 
-<div className="relative z-[2] mx-auto max-w-[1280px] px-[4%] py-20 md:px-10 lg:px-0 lg:py-24"></div>
+
 
         {/* desktop lines */}
         <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">

@@ -114,84 +114,100 @@ const Navbar = () => {
         .menu-footer {
           margin-top: auto;
           padding-top: 24px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 16px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 14px;
           border-top: 1px solid rgba(255,255,255,0.08);
         }
 
-        .menu-footer-copy {
-          color: rgba(255,255,255,0.48);
-          font-size: 13px;
-          line-height: 1.4;
-        }
-
-        .menu-footer-cta {
+        .menu-footer-cta,
+        .menu-footer-call {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          min-width: 118px;
+          width: 100%;
           height: 42px;
           padding: 0 16px;
-          background: #ff5a1f;
-          color: #fff;
           text-decoration: none;
           font-size: 14px;
           font-weight: 500;
-          transition: transform 0.18s ease, background 0.18s ease;
+          transition:
+            transform 0.18s ease,
+            background 0.18s ease,
+            border-color 0.18s ease,
+            color 0.18s ease;
+        }
+
+        .menu-footer-cta {
+          background: #ff5a1f;
+          border: 1px solid #ff5a1f;
+          color: #fff;
         }
 
         .menu-footer-cta:hover {
           background: #ff6229;
+          border-color: #ff6229;
           transform: translateY(-1px);
         }
 
-    @media (max-width: 767px) {
-  .menu-drawer {
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: clamp(420px, 60vh, 520px);
-    max-height: clamp(420px, 60vh, 520px);
-    border-left: 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.34);
-    transform: translateY(-100%);
-    overflow: hidden;
-  }
+        .menu-footer-call {
+          background: transparent;
+          border: 1px solid rgba(255,255,255,0.72);
+          color: #fff;
+        }
 
-  .menu-drawer-open {
-    transform: translateY(0);
-  }
+        .menu-footer-call:hover {
+          border-color: #ff5a1f;
+          color: #ff5a1f;
+          transform: translateY(-1px);
+        }
 
-  .menu-drawer::before {
-    right: auto;
-    left: 50%;
-    bottom: -100px;
-    transform: translateX(-50%);
-    width: 300px;
-    height: 220px;
-  }
+        @media (max-width: 767px) {
+          .menu-drawer {
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: clamp(420px, 60vh, 520px);
+            max-height: clamp(420px, 60vh, 520px);
+            border-left: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.34);
+            transform: translateY(-100%);
+            overflow: hidden;
+          }
 
-  .menu-link {
-    padding: 16px 0;
-  }
+          .menu-drawer-open {
+            transform: translateY(0);
+          }
 
-  .menu-link-text {
-    font-size: 28px;
-  }
+          .menu-drawer::before {
+            right: auto;
+            left: 50%;
+            bottom: -100px;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 220px;
+          }
 
-  .menu-link:last-child {
-    border-bottom: 0;
-  }
+          .menu-link {
+            padding: 16px 0;
+          }
 
-  .menu-footer {
-    flex-direction: row;
-    align-items: center;
-  }
-}
+          .menu-link-text {
+            font-size: 28px;
+          }
+
+          .menu-link:last-child {
+            border-bottom: 0;
+          }
+
+          .menu-footer {
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding-top: 24px;
+          }
+        }
       `}</style>
 
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
@@ -213,6 +229,7 @@ const Navbar = () => {
               <Globe className="w-4 h-4" />
               {langLabels[lang]}
             </button>
+
             {langOpen && (
               <div className="absolute right-0 top-full mt-2 bg-card border border-border rounded-md overflow-hidden shadow-xl min-w-[60px]">
                 {(Object.keys(langLabels) as Lang[]).map((l) => (
@@ -222,7 +239,9 @@ const Navbar = () => {
                       setLang(l);
                       setLangOpen(false);
                     }}
-                    className={`block w-full px-4 py-2 text-sm text-left hover:bg-muted transition-colors ${l === lang ? 'text-primary' : 'text-foreground'}`}
+                    className={`block w-full px-4 py-2 text-sm text-left hover:bg-muted transition-colors ${
+                      l === lang ? 'text-primary' : 'text-foreground'
+                    }`}
                   >
                     {langLabels[l]}
                   </button>
@@ -231,7 +250,10 @@ const Navbar = () => {
             )}
           </div>
 
-          <button onClick={() => setMenuOpen(!menuOpen)} className="z-50 flex flex-col justify-center items-end gap-[6px] w-8 h-8">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="z-50 flex flex-col justify-center items-end gap-[6px] w-8 h-8"
+          >
             {menuOpen ? (
               <svg width="24" height="24" viewBox="0 0 24 24" className="text-foreground">
                 <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -258,12 +280,10 @@ const Navbar = () => {
             menuOpen ? 'menu-drawer-open' : ''
           }`}
         >
-          {/* mobile drawer lines */}
           <div className="menu-grid-line md:hidden" style={{ left: '4%' }} />
           <div className="menu-grid-line md:hidden" style={{ left: '50%' }} />
           <div className="menu-grid-line md:hidden" style={{ left: '96%' }} />
 
-          {/* desktop drawer lines */}
           <div className="menu-grid-line hidden md:block" style={{ left: '12%' }} />
           <div className="menu-grid-line hidden md:block" style={{ left: '50%' }} />
           <div className="menu-grid-line hidden md:block" style={{ left: '88%' }} />
@@ -292,18 +312,21 @@ const Navbar = () => {
             </div>
 
             <div className="menu-footer">
-              <p className="menu-footer-copy">
-                Premium car service
-                <br />
-                and repair studio
-              </p>
-
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
                 className="menu-footer-cta"
               >
                 Book Now
+              </a>
+
+              <a
+                href="tel:+48577472788"
+                onClick={() => setMenuOpen(false)}
+                className="menu-footer-call"
+                aria-label="Call +48 577 472 788"
+              >
+                Call
               </a>
             </div>
           </div>
