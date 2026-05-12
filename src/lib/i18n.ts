@@ -216,6 +216,23 @@ cta: {
 
   preferredDate: 'Preferred Date',
     },
+
+    footer: {
+  copy: 'Your trusted partner for car electronics, diagnostics, chip tuning and audio installation. Professional service, clean installation and honest support since 2021.',
+  quickLinks: 'Quick Links',
+  servicesTitle: 'Services',
+  contactInfo: 'Contact Info',
+  rights: 'All rights reserved.',
+  privacy: 'Privacy Policy',
+  terms: 'Terms of Service',
+  links: {
+    home: 'Home',
+    about: 'About Us',
+    services: 'Services',
+    pricing: 'Pricing',
+    contact: 'Contact',
+  },
+},
   },
   pl: {
     nav: { about: 'O nas', services: 'Usługi', contact: 'Kontakt', pricing: 'Cennik', blog: 'Blog' },
@@ -432,6 +449,22 @@ cta: {
 
   preferredDate: 'Preferowana data',
     },
+    footer: {
+  copy: 'Twój zaufany partner w zakresie elektroniki samochodowej, diagnostyki, chip tuningu i montażu car audio. Profesjonalna obsługa, czysty montaż i uczciwe wsparcie od 2021 roku.',
+  quickLinks: 'Szybkie Linki',
+  servicesTitle: 'Usługi',
+  contactInfo: 'Dane Kontaktowe',
+  rights: 'Wszelkie prawa zastrzeżone.',
+  privacy: 'Polityka Prywatności',
+  terms: 'Regulamin',
+  links: {
+    home: 'Strona Główna',
+    about: 'O Nas',
+    services: 'Usługi',
+    pricing: 'Cennik',
+    contact: 'Kontakt',
+  },
+},
   },
   ua: {
     nav: { about: 'Про нас', services: 'Послуги', contact: 'Контакт', pricing: 'Ціни', blog: 'Блог' },
@@ -655,6 +688,22 @@ cta: {
   preferredDate: 'Бажана дата',
 },
     },
+    footer: {
+  copy: 'Ваш надійний партнер з автоелектроніки, діагностики, чип-тюнінгу та встановлення car audio. Професійний сервіс, акуратний монтаж і чесна підтримка з 2021 року.',
+  quickLinks: 'Швидкі Посилання',
+  servicesTitle: 'Послуги',
+  contactInfo: 'Контактна Інформація',
+  rights: 'Усі права захищені.',
+  privacy: 'Політика Конфіденційності',
+  terms: 'Умови Використання',
+  links: {
+    home: 'Головна',
+    about: 'Про Нас',
+    services: 'Послуги',
+    pricing: 'Ціни',
+    contact: 'Контакт',
+  },
+},
   },
 } as const;
 

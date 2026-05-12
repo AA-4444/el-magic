@@ -4,28 +4,21 @@ import {
   MapPin,
   Facebook,
   Instagram,
-  Youtube,
 } from 'lucide-react';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   const quickLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About Us', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'Contact', href: '#contact' },
+    { label: t.footer.links.home, href: '#home' },
+    { label: t.footer.links.about, href: '#about' },
+    { label: t.footer.links.services, href: '#services' },
+    { label: t.footer.links.pricing, href: '#pricing' },
+    { label: t.footer.links.contact, href: '#contact' },
   ];
 
- const services = [
-  'Chip Tuning',
-  'Computer Diagnostics',
-  'Electrical System Repair',
-  'Car Audio Installation',
-  'Coding & Programming',
-  'Accessory Installation',
-  'Air Conditioning Service',
-  'Headlight Restoration',
-];
+  const services = t.services.items.map((item: any) => item.name);
 
   return (
     <>
@@ -303,10 +296,7 @@ const Footer = () => {
                   <span className="footer-brand">El-Magic</span>
                 </div>
 
-                <p className="footer-copy">
-                 Your trusted partner for car electronics, diagnostics, chip tuning and audio installation.
-                  Professional service, clean installation and honest support since 2021.
-                </p>
+                <p className="footer-copy">{t.footer.copy}</p>
 
                 <div className="footer-socials">
                   <a href="#" className="footer-social" aria-label="Facebook">
@@ -319,7 +309,7 @@ const Footer = () => {
               </div>
 
               <div>
-                <h3 className="footer-title">Quick Links</h3>
+                <h3 className="footer-title">{t.footer.quickLinks}</h3>
                 <ul className="footer-list">
                   {quickLinks.map((item) => (
                     <li key={item.label}>
@@ -332,9 +322,9 @@ const Footer = () => {
               </div>
 
               <div>
-                <h3 className="footer-title">Services</h3>
+                <h3 className="footer-title">{t.footer.servicesTitle}</h3>
                 <ul className="footer-list">
-                  {services.map((item) => (
+                  {services.map((item: string) => (
                     <li key={item}>
                       <a href="#services" className="footer-link">
                         {item}
@@ -345,7 +335,7 @@ const Footer = () => {
               </div>
 
               <div>
-                <h3 className="footer-title">Contact Info</h3>
+                <h3 className="footer-title">{t.footer.contactInfo}</h3>
                 <ul className="footer-contact-list">
                   <li className="footer-contact-item">
                     <Phone className="footer-contact-icon h-6 w-6 stroke-[1.8]" />
@@ -360,9 +350,9 @@ const Footer = () => {
                   <li className="footer-contact-item">
                     <MapPin className="footer-contact-icon h-6 w-6 stroke-[1.8]" />
                     <p className="footer-meta">
-                    Wrocław,
-                    <br />
-                    Sułowska 19A
+                      Wrocław,
+                      <br />
+                      Sułowska 19A
                     </p>
                   </li>
                 </ul>
@@ -371,15 +361,15 @@ const Footer = () => {
 
             <div className="footer-bottom">
               <p className="footer-bottom-copy">
-                © 2026 El-Magic. All rights reserved.
+                © 2026 El-Magic. {t.footer.rights}
               </p>
 
               <div className="footer-bottom-links">
-                <a href="#" className="footer-bottom-link">
-                  Privacy Policy
+                <a href="/privacy-policy" className="footer-bottom-link">
+                  {t.footer.privacy}
                 </a>
-                <a href="#" className="footer-bottom-link">
-                  Terms of Service
+                <a href="/terms-of-service" className="footer-bottom-link">
+                  {t.footer.terms}
                 </a>
               </div>
             </div>

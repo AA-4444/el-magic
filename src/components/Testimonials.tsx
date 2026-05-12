@@ -48,6 +48,8 @@ const Testimonials = () => {
           scroll-behavior: smooth;
           scroll-snap-type: x mandatory;
           -webkit-overflow-scrolling: touch;
+          padding-top: 8px;
+          padding-bottom: 8px;
         }
 
         .testimonials-track::-webkit-scrollbar {
@@ -64,6 +66,8 @@ const Testimonials = () => {
           flex-shrink: 0;
           scroll-snap-align: start;
           scroll-snap-stop: always;
+          display: flex;
+          flex-direction: column;
           transition:
             transform 0.22s ease,
             border-color 0.22s ease,
@@ -83,6 +87,7 @@ const Testimonials = () => {
           align-items: center;
           gap: 6px;
           margin-bottom: 32px;
+          flex: 0 0 auto;
         }
 
         .testimonial-text {
@@ -91,8 +96,9 @@ const Testimonials = () => {
           line-height: 1.45;
           font-weight: 400;
           letter-spacing: -0.02em;
-          margin: 0 0 34px;
+          margin: 0;
           max-width: 360px;
+          flex: 1 1 auto;
         }
 
         .testimonial-author {
@@ -100,6 +106,8 @@ const Testimonials = () => {
           align-items: center;
           gap: 16px;
           margin-top: auto;
+          padding-top: 34px;
+          flex: 0 0 auto;
         }
 
         .testimonial-avatar {
@@ -174,10 +182,17 @@ const Testimonials = () => {
             padding: 28px 24px 24px;
           }
 
+          .testimonial-stars {
+            margin-bottom: 28px;
+          }
+
           .testimonial-text {
             font-size: 18px;
             max-width: 320px;
-            margin-bottom: 28px;
+          }
+
+          .testimonial-author {
+            padding-top: 28px;
           }
         }
 
@@ -185,13 +200,21 @@ const Testimonials = () => {
           .testimonial-card {
             min-width: 100%;
             max-width: 100%;
-            min-height: 320px;
+            min-height: 360px;
             padding: 24px 18px 22px;
+          }
+
+          .testimonial-stars {
+            margin-bottom: 24px;
           }
 
           .testimonial-text {
             font-size: 17px;
             max-width: none;
+          }
+
+          .testimonial-author {
+            padding-top: 24px;
           }
 
           .testimonial-nav {
@@ -243,7 +266,7 @@ const Testimonials = () => {
 
           <div
             ref={scrollRef}
-            className="testimonials-track flex gap-0 overflow-x-auto pb-4 md:gap-6"
+            className="testimonials-track flex gap-0 overflow-x-auto md:gap-6"
           >
             {reviews.map((r, i) => (
               <div
