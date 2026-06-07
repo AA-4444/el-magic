@@ -1,6 +1,7 @@
 import { useLanguage } from '@/lib/LanguageContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import logo from '@/assets/logo.png';
 
 const PrivacyPolicy = () => {
   const { lang } = useLanguage();
@@ -279,16 +280,14 @@ const PrivacyPolicy = () => {
         .privacy-logo {
           display: flex;
           align-items: center;
-          gap: 14px;
           margin-bottom: 28px;
         }
 
-        .privacy-brand {
-          color: #f4f4f4;
-          font-size: 24px;
-          line-height: 1;
-          font-weight: 400;
-          letter-spacing: -0.03em;
+        .privacy-logo-image {
+          display: block;
+          width: auto;
+          height: 42px;
+          object-fit: contain;
         }
 
         .privacy-side-text {
@@ -455,19 +454,7 @@ const PrivacyPolicy = () => {
             <section className="privacy-content">
               <aside className="privacy-side">
                 <div className="privacy-logo">
-                  <svg
-                    width="54"
-                    height="34"
-                    viewBox="0 0 74 46"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M23 0H51L57 12H17L23 0Z" fill="#FF5A1F" />
-                    <path d="M7 12H31L37 23H13L7 12Z" fill="#FF5A1F" />
-                    <path d="M43 12H67L61 23H37L43 12Z" fill="#FF5A1F" />
-                    <path d="M17 23H57L51 35H23L17 23Z" fill="#FF5A1F" />
-                  </svg>
-                  <span className="privacy-brand">El-Magic</span>
+                  <img src={logo} alt="El-Magic" className="privacy-logo-image" />
                 </div>
 
                 <p className="privacy-side-text">

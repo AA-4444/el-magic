@@ -6,6 +6,7 @@ import {
   Instagram,
 } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
+import logo from '@/assets/logo.png';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -65,16 +66,14 @@ const Footer = () => {
         .footer-logo {
           display: flex;
           align-items: center;
-          gap: 16px;
           margin-bottom: 42px;
         }
 
-        .footer-brand {
-          color: #f4f4f4;
-          font-size: 28px;
-          line-height: 1;
-          font-weight: 400;
-          letter-spacing: -0.03em;
+        .footer-logo-image {
+          display: block;
+          width: auto;
+          height: 58px;
+          object-fit: contain;
         }
 
         .footer-copy {
@@ -229,8 +228,8 @@ const Footer = () => {
             gap: 16px;
           }
 
-          .footer-brand {
-            font-size: 24px;
+          .footer-logo-image {
+            height: 46px;
           }
 
           .footer-copy,
@@ -280,20 +279,7 @@ const Footer = () => {
             <div className="footer-main">
               <div>
                 <div className="footer-logo">
-                  <svg
-                    width="74"
-                    height="46"
-                    viewBox="0 0 74 46"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M23 0H51L57 12H17L23 0Z" fill="#FF5A1F" />
-                    <path d="M7 12H31L37 23H13L7 12Z" fill="#FF5A1F" />
-                    <path d="M43 12H67L61 23H37L43 12Z" fill="#FF5A1F" />
-                    <path d="M17 23H57L51 35H23L17 23Z" fill="#FF5A1F" />
-                  </svg>
-
-                  <span className="footer-brand">El-Magic</span>
+                  <img src={logo} alt="El-Magic" className="footer-logo-image" />
                 </div>
 
                 <p className="footer-copy">{t.footer.copy}</p>

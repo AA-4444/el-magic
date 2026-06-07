@@ -1,6 +1,7 @@
 import { useLanguage } from '@/lib/LanguageContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import logo from '@/assets/logo.png';
 
 const TermsOfService = () => {
   const { lang } = useLanguage();
@@ -291,16 +292,14 @@ const TermsOfService = () => {
         .terms-logo {
           display: flex;
           align-items: center;
-          gap: 14px;
           margin-bottom: 28px;
         }
 
-        .terms-brand {
-          color: #f4f4f4;
-          font-size: 24px;
-          line-height: 1;
-          font-weight: 400;
-          letter-spacing: -0.03em;
+        .terms-logo-image {
+          display: block;
+          width: auto;
+          height: 42px;
+          object-fit: contain;
         }
 
         .terms-side-text {
@@ -467,19 +466,7 @@ const TermsOfService = () => {
             <section className="terms-content">
               <aside className="terms-side">
                 <div className="terms-logo">
-                  <svg
-                    width="54"
-                    height="34"
-                    viewBox="0 0 74 46"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M23 0H51L57 12H17L23 0Z" fill="#FF5A1F" />
-                    <path d="M7 12H31L37 23H13L7 12Z" fill="#FF5A1F" />
-                    <path d="M43 12H67L61 23H37L43 12Z" fill="#FF5A1F" />
-                    <path d="M17 23H57L51 35H23L17 23Z" fill="#FF5A1F" />
-                  </svg>
-                  <span className="terms-brand">El-Magic</span>
+                  <img src={logo} alt="El-Magic" className="terms-logo-image" />
                 </div>
 
                 <p className="terms-side-text">

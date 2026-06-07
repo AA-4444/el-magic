@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { Globe } from 'lucide-react';
 import type { Lang } from '@/lib/i18n';
+import logo from '@/assets/logo.png';
 
 const langLabels: Record<Lang, string> = { en: 'EN', pl: 'PL', ua: 'UA' };
 
@@ -211,13 +212,12 @@ const Navbar = () => {
       `}</style>
 
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 lg:px-24 py-6 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3 z-50">
-          <svg width="40" height="28" viewBox="0 0 40 28" fill="none">
-            <path d="M20 0L32 7V14L20 7L8 14V7L20 0Z" fill="hsl(22, 100%, 50%)" />
-            <path d="M20 7L32 14V21L20 14L8 21V14L20 7Z" fill="hsl(22, 100%, 50%)" />
-            <path d="M20 14L32 21V28L20 21L8 28V21L20 14Z" fill="hsl(22, 100%, 40%)" />
-          </svg>
-          <span className="text-foreground text-xl font-bold tracking-tight">El-Magic</span>
+        <a href="#" className="z-50 flex items-center">
+          <img
+            src={logo}
+            alt="El-Magic"
+            className="h-9 w-auto object-contain md:h-10"
+          />
         </a>
 
         <div className="flex items-center gap-5 z-50">
